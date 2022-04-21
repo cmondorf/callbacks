@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Callbacks: forEach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<script src="output.js"></script>
+<script>
+    const consultants = [
+        'Ibrahim', 'Philipp', 'David', 'Niklas', 'Rebecca', 'Nadine',
+        'Mehmet', 'Christian', 'Rooney', 'Prakash', 'Anja', 'Pia', 'Elias'];
+    const teachers = ['Florian', 'Alex', 'Georg'];
+    const managers = ['Lucas', 'Myriam'];
+
+    for (const person of teachers) {
+        const r = Math.random();
+        if (r < 0.2) {
+            output('Hallo, ' + person + '.');
+        } else if (r < 0.4) {
+            output('Hi, ' + person + '!');
+        } else if (r < 0.6) {
+            output('Guten Tag, ' + person + '.');
+        } else if (r < 0.8) {
+            output('Servus, ' + person + '!');
+        } else {
+            output('Moin, ' + person + '!');
+        }
+    }
+
+    /*
+        Aufgabe: Auf die gleiche Art und Weise wie oben sollen nicht nur alle Personen in teachers, sondern auch die
+        consultants und managers gegrüßt werden.
+
+        In JavaScript gibt es dafür bei Arrays die Methode forEach, welcher ein Callback übergeben wird.
+
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+        Ein Callback kann entweder eine anonyme Funktion sein, wie in dem Beispiel bei MDN, es kann aber auch eine
+        vorher definierte Funktion übergeben werden. Dies ermöglicht dir, die selbe Callback-Funktion für den
+        forEach-Aufruf von mehreren Arrays zu verwenden.
+
+        Verlagere die Logik aus der for-Schleife oben also in eine eigene Funktion, welche den Namen der Person
+        als Parameter erwartet. Ersetze die for-Schleife dann durch einen Aufruf von teachers.forEach(...) mit
+        der neuen Funktion als Parameter.
+
+        So kannst du einfach mit zwei weiteren Zeilen die Begrüßung der Personen in den beiden anderen Arrays
+        implementieren.
+
+        Bonus: Der Callback erhält als zweiten Parameter den Index. Mach die Begrüßung abhängig vom Index, nicht
+        mehr von Zufall.
+    */
+</script>
+</body>
+</html>
