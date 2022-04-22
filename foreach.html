@@ -29,6 +29,38 @@
         }
     }
 
+    function greeting(person) {
+        const r = Math.random();
+        if (r < 0.2) {
+            output('Hallo, ' + person + '.');
+        } else if (r < 0.4) {
+            output('Hi, ' + person + '!');
+        } else if (r < 0.6) {
+            output('Guten Tag, ' + person + '.');
+        } else if (r < 0.8) {
+            output('Servus, ' + person + '!');
+        } else {
+            output('Moin, ' + person + '!');
+        }
+    }
+
+    function greetingIndex(person, index) {
+        if (index % 5 === 0) {
+            output('Hallo, ' + person + '.');
+        } else if (index % 4 === 0) {
+            output('Hi, ' + person + '!');
+        } else if (index % 3 === 0) {
+            output('Guten Tag, ' + person + '.');
+        } /*else if /*(r < 0.8) {
+            output('Servus, ' + person + '!');
+        } else {
+            output('Moin, ' + person + '!');
+        }*/
+    }
+
+    //managers.forEach(greeting);
+    consultants.forEach(greetingIndex);
+
     /*
         Aufgabe: Auf die gleiche Art und Weise wie oben sollen nicht nur alle Personen in teachers, sondern auch die
         consultants und managers gegrüßt werden.
@@ -42,7 +74,9 @@
         forEach-Aufruf von mehreren Arrays zu verwenden.
 
         Verlagere die Logik aus der for-Schleife oben also in eine eigene Funktion, welche den Namen der Person
-        als Parameter erwartet. Ersetze die for-Schleife dann durch einen Aufruf von teachers.forEach(...) mit
+        als Parameter erwartet.
+
+        Ersetze die for-Schleife dann durch einen Aufruf von teachers.forEach(...) mit
         der neuen Funktion als Parameter.
 
         So kannst du einfach mit zwei weiteren Zeilen die Begrüßung der Personen in den beiden anderen Arrays
